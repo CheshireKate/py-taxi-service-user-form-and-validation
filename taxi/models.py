@@ -31,7 +31,7 @@ class Driver(AbstractUser):
     def clean_license_number(self):
         if len(self.license_number) != 8:
             raise forms.ValidationError(
-                "The license should must of 8 characters"
+                "The license must be 8 characters long"
             )
         if (not self.license_number[:3].isupper()
                 or not self.license_number[:3].isalpha()):

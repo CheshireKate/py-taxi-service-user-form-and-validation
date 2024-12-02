@@ -1,11 +1,11 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from templates.taxi.forms import DriverCreationForm, CarCreateForm
+from .forms import DriverCreationForm, CarCreateForm
 from .models import Driver, Car, Manufacturer
 
 
@@ -75,7 +75,6 @@ class CarDetailView(LoginRequiredMixin, generic.DetailView):
 class CarCreateView(LoginRequiredMixin, generic.CreateView):
     model = Car
     form_class = CarCreateForm
-    fields = "__all__"
     success_url = reverse_lazy("taxi:car-list")
 
 

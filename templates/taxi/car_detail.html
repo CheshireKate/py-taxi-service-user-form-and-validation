@@ -11,11 +11,11 @@
       Update
     </a>
     {% if is_driver %}
-    <a href="{% url "taxi:remove_from_car" car.id %}">Delete me from this car
+    <a href="{% url "taxi:remove_from_car" pk=car.id %}">Delete me from this car
     </a>
     {% endif %}
    {% if not is_driver %}
-     <a href="{% url "taxi:assign_to_car" car.id %}">Assign me to this car
+     <a href="{% url "taxi:assign_to_car" pk=car.id %}">Assign me to this car
     </a>
    {% endif %}
   </h1>
